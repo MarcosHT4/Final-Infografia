@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/BossExplosion.tscn" type="PackedScene" id=1]
+
+[node name="Explosions" type="Node2D"]
+
+[node name="BossExplosion" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 546, 318 )
+
+[node name="BossExplosion2" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 567, 256 )
+
+[node name="BossExplosion3" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 497, 267 )
+
+[node name="BossExplosion4" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 464, 199 )
+
+[node name="BossExplosion5" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 620, 179 )
+
+[node name="BossExplosion6" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 446, 341 )
+
+[node name="BossExplosion7" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 379, 267 )
+
+[node name="BossExplosion8" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 343, 190 )
+
+[node name="BossExplosion9" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 349, 339 )
+
+[node name="BossExplosion10" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 658, 319 )

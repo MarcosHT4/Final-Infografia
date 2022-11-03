@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/doomsday_zone.mp3-53931e3213e8d61793e70f1432f58eb7.mp3str"
+
+[deps]
+
+source_file="res://assets/main/doomsday_zone.mp3"
+dest_files=[ "res://.import/doomsday_zone.mp3-53931e3213e8d61793e70f1432f58eb7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

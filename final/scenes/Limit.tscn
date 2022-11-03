@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleShape2D" id=66]
+radius = 48.9997
+height = 250000.0
+
+[node name="Limit" type="StaticBody2D"]
+
+[node name="RoofCollision" type="CollisionShape2D" parent="."]
+position = Vector2( 76, -204 )
+rotation = 1.5708
+shape = SubResource( 66 )

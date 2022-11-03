@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/Tails.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/GreenHillZone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Level2.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Caterkiller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GameOverTimer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/GameWonTimer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/GameWonLabel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/GameOverLabel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Songs.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/Crabmeat.tscn" type="PackedScene" id=10]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Tails" parent="." groups=["Player"] instance=ExtResource( 1 )]
+position = Vector2( -400, 228 )
+z_index = 1
+
+[node name="GreenHillZone" parent="." instance=ExtResource( 2 )]
+position = Vector2( -17, 132 )
+
+[node name="GameWonTimer" parent="." instance=ExtResource( 6 )]
+
+[node name="GameOverTimer" parent="." instance=ExtResource( 5 )]
+
+[node name="GameOverLabel" parent="." instance=ExtResource( 8 )]
+rect_scale = Vector2( 0.5, 0.5 )
+
+[node name="GameWonLabel" parent="." instance=ExtResource( 7 )]
+rect_scale = Vector2( 0.5, 0.5 )
+text = "TAILS WON!"
+
+[node name="Songs" parent="." instance=ExtResource( 9 )]
+
+[node name="Crabmeat" parent="." instance=ExtResource( 10 )]
+position = Vector2( 7774, 66 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Crabmeat2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6401, 64 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Crabmeat3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4586, 348 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Crabmeat4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 4089, 244 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Crabmeat5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2342, 347 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Crabmeat6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1209, 243 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Caterkiller" parent="." instance=ExtResource( 4 )]
+position = Vector2( 977, 456 )
+
+[node name="Caterkiller2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 3813, 456 )
+speed = 1000
+
+[node name="Caterkiller3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 7346, 276 )
+speed = 1000
+
+[node name="Caterkiller4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 8959, 308 )
+speed = 1000
+
+[connection signal="timeout" from="GameWonTimer" to="." method="_on_GameWonTimer_timeout"]
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]

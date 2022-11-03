@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="GameWonTimer" type="Timer"]
+wait_time = 2.0

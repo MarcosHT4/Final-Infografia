@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/Level1.gd" type="Script" id=1]
+[ext_resource path="res://scenes/GameWonLabel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/GameWonTimer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/GameOverLabel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/GameOverTimer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Songs.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/EmeraldHillZone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/MotoBug.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Sonic.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/main/emerald_hill_zone.mp3" type="AudioStream" id=10]
+[ext_resource path="res://scenes/Yadorin.tscn" type="PackedScene" id=11]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="EmeraldHillZone" parent="." instance=ExtResource( 7 )]
+position = Vector2( 11, -31 )
+
+[node name="Sonic" parent="." groups=["Player"] instance=ExtResource( 9 )]
+position = Vector2( 233, 231 )
+
+[node name="MotoBug" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2024, 67 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5947, 451 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 15977, -253 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 16663, -1663 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 18345, -1085 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 20793, -1983 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 24613, -1852 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 25369, -1853 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 26038, -1853 )
+scale = Vector2( 2, 2 )
+
+[node name="MotoBug10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 28034, -1149 )
+scale = Vector2( 2, 2 )
+
+[node name="GameOverTimer" parent="." instance=ExtResource( 5 )]
+
+[node name="GameOverLabel" parent="." instance=ExtResource( 4 )]
+
+[node name="GameWonLabel" parent="." instance=ExtResource( 2 )]
+
+[node name="GameWonTimer" parent="." instance=ExtResource( 3 )]
+
+[node name="Songs" parent="." instance=ExtResource( 6 )]
+stream = ExtResource( 10 )
+
+[node name="Yadorin" parent="." instance=ExtResource( 11 )]
+position = Vector2( 4335, 251 )
+scale = Vector2( 2, 2 )
+
+[node name="Yadorin2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 15550, -834 )
+scale = Vector2( 2, 2 )
+
+[node name="Yadorin3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 15332, -261 )
+scale = Vector2( 2, 2 )
+
+[node name="Yadorin4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 19520, -1220 )
+scale = Vector2( 2, 2 )
+
+[node name="Yadorin5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 23669, -2247 )
+scale = Vector2( 2, 2 )
+
+[connection signal="timeout" from="GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
+[connection signal="timeout" from="GameWonTimer" to="." method="_on_GameWonTimer_timeout"]

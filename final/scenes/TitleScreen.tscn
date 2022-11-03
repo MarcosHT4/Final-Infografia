@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/TitleLogo.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://assets/title_screen/title_screen.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/title_screen/parallax_background.png" type="Texture" id=6]
+[ext_resource path="res://scenes/ParallaxBackgroundTitle.gd" type="Script" id=7]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="Main" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_right = 970.0
+margin_bottom = 600.0
+
+[node name="Button" type="HBoxContainer" parent="Main"]
+margin_right = 920.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Play" parent="Main/Button" instance=ExtResource( 2 )]
+margin_left = 75.0
+margin_right = 435.0
+margin_bottom = 60.0
+align = 0
+scene = "res://scenes/Level1.tscn"
+
+[node name="Label" parent="Main/Button/Play" index="0"]
+anchor_top = 0.78
+anchor_right = 0.193
+anchor_bottom = 0.78
+margin_left = 8.0
+margin_top = -43.0
+margin_right = 107.52
+margin_bottom = 6.0
+text = "PLAY"
+
+[node name="Exit" parent="Main/Button" instance=ExtResource( 2 )]
+margin_left = 485.0
+margin_right = 845.0
+margin_bottom = 60.0
+align = 2
+
+[node name="Label" parent="Main/Button/Exit" index="0"]
+anchor_left = 1.079
+anchor_top = 0.771
+anchor_right = 1.089
+anchor_bottom = 0.78
+margin_left = -288.68
+margin_top = -38.8954
+margin_right = -153.28
+margin_bottom = 9.56462
+text = "EXIT"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="ParallaxBackgroundTitle" type="ParallaxBackground" parent="."]
+script = ExtResource( 7 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackgroundTitle"]
+motion_mirroring = Vector2( 1450, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackgroundTitle/ParallaxLayer"]
+position = Vector2( 739.328, 299.5 )
+scale = Vector2( 4.99691, 7.07059 )
+texture = ExtResource( 6 )
+
+[node name="TitleLogo" parent="." instance=ExtResource( 3 )]
+position = Vector2( 500, 333 )
+scale = Vector2( 2, 2 )
+
+[editable path="Main/Button/Play"]
+[editable path="Main/Button/Exit"]

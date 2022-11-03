@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/world/meteors.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Proyectile.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 73.0616
+
+[node name="BigMeteor" type="KinematicBody2D"]
+collision_layer = 1048576
+collision_mask = 131073
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 513, 249 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 2, 13, 147, 147 )
+
+[node name="BigMeteorShape" type="CollisionShape2D" parent="."]
+position = Vector2( 511, 250 )
+shape = SubResource( 1 )
